@@ -1,0 +1,250 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #e5e7eb;
+  background: #020617;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top, rgba(59, 130, 246, 0.18), transparent 30%),
+    linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  color: #e5e7eb;
+}
+
+button {
+  font: inherit;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #93c5fd;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+p {
+  margin: 0;
+  color: #94a3b8;
+}
+
+.toolbar {
+  margin-bottom: 24px;
+  padding: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.breadcrumb {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: #1e293b;
+  color: #e2e8f0;
+  cursor: pointer;
+}
+
+.breadcrumb:hover {
+  background: #334155;
+}
+
+.meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.ghost-button {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: transparent;
+  color: #e5e7eb;
+  cursor: pointer;
+}
+
+.ghost-button:hover {
+  background: rgba(148, 163, 184, 0.08);
+}
+
+.muted {
+  color: #94a3b8;
+}
+
+.status {
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 18px;
+  border: 1px dashed rgba(148, 163, 184, 0.25);
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.status.error {
+  color: #fecaca;
+  border-color: rgba(239, 68, 68, 0.35);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  padding: 0;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(15, 23, 42, 0.72);
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(96, 165, 250, 0.6);
+}
+
+.thumb {
+  aspect-ratio: 4 / 3;
+  background: #0b1120;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card.directory .thumb {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.emoji-thumb {
+  font-size: 3rem;
+}
+
+.card-body {
+  padding: 14px;
+  display: grid;
+  gap: 8px;
+}
+
+.card-body h2 {
+  margin: 0;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-body p,
+.card-body span {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  padding: 24px;
+  background: rgba(2, 6, 23, 0.84);
+  display: grid;
+  place-items: center;
+}
+
+.modal {
+  width: min(1000px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  padding: 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  background: #020617;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.modal-header h3 {
+  margin: 0 0 4px;
+}
+
+.modal-image {
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+  background: #000;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 16px;
+  }
+
+  .modal-backdrop {
+    padding: 12px;
+  }
+
+  .modal-header {
+    flex-direction: column;
+  }
+}
